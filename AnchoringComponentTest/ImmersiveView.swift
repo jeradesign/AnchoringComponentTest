@@ -21,7 +21,6 @@ struct ImmersiveView: View {
                   let ball = ballScene.findEntity(named: "Sphere") else {
                 fatalError("Couldn't load ShinySphere.glb")
             }
-            print(ball.debugDescription)
             ball.position = SIMD3<Float>(0, 0.1, 0)
             ball.components.set(GroundingShadowComponent(castsShadow: true, receivesShadow: true, fadeBehaviorNearPhysicalObjects: .constant))
             anchorEntity = AnchorEntity(.plane(.horizontal, classification: .table, minimumBounds: [0.25, 0.25]))
